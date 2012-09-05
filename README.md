@@ -1,0 +1,4 @@
+kjwfx
+=====
+
+foreign currency deposit
