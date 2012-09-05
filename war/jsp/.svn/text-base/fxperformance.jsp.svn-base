@@ -1,0 +1,75 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="com.google.appengine.api.users.User" %>
+<%@ page import="com.google.appengine.api.users.UserService" %>
+<%@ page import="com.google.appengine.api.users.UserServiceFactory" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.*" %>
+<%@ page import="java.text.*" %>
+<%@ page import="javax.jdo.PersistenceManager" %>
+<%@ page import="com.cocolog_nifty.kjunichi.kjwfx.FxCalc" %>
+<%@ page import="com.cocolog_nifty.kjunichi.kjwfx.ds.Fxrecord2" %>
+<%@ page import="com.cocolog_nifty.kjunichi.kjwfx.PMF" %>
+<html>
+<head>
+</head>
+<body>
+<%
+UserService userService = UserServiceFactory.getUserService();
+User user = userService.getCurrentUser();
+		
+List<Fxrecord2> list = FxCalc.getFxDone(user,"EUR");
+%>
+<%= list.size() %>
+<table border="1">
+<%
+int total = 0;
+for (Fxrecord2 g : list) {
+%>
+<tr><td><%= g.getDate() %></td><td><%= g.getAmount() %></td><td><%= g.getTtb() %></td><td><%= g.getTts() %></td>
+<%
+Float result = new Float(0.0);
+if (g.getAmount() != null && g.getTtb() != null && g.getTts() != null  ) {
+Float srcAmount = g.getAmount() * g.getTtb();
+Float distAmount = g.getAmount() * g.getTts();
+result = distAmount - srcAmount;
+total = total + result.intValue(); 
+}
+%>
+<td><%= result %></td></tr>
+<%
+}
+%>
+</table>
+<%= total %>
+
+<%
+list = FxCalc.getFxDone(user,"USD");
+%>
+<%= list.size() %>
+<table border="1">
+<tr><th>購入日</th><th>売却日</th><th>取引額</th><th>TTB</th><th>TTS</th><th>利益</th></tr>
+<%
+total = 0;
+for (Fxrecord2 g : list) {
+%>
+<tr><td><%= g.getDate() %></td><td><%= g.getTtsDate() %></td><td><%= g.getAmount() %></td><td><%= g.getTtb() %></td><td><%= g.getTts() %></td>
+<%
+Float result = new Float(0.0);
+if (g.getAmount() != null && g.getTtb() != null && g.getTts() != null  ) {
+ Float srcAmount = (g.getAmount() * g.getTtb());
+ Float distAmount = (g.getAmount() * g.getTts());
+result = distAmount - srcAmount;
+total = total + result.intValue(); 
+}
+%>
+<td><%= result %></td></tr>
+<%
+}
+%>
+</table>
+<%= total %>
+
+
+<a href="fxgraph.jsp">fxgraph</a>
+</body>
+</html>

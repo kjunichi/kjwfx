@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/kjwfx/!svn/ver/2/kjwfx/war/WEB-INF/appengine-generated
+END
+datastore-indexes-auto.xml
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kjwfx/!svn/ver/3/kjwfx/war/WEB-INF/appengine-generated/datastore-indexes-auto.xml
+END
+local_db.bin
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/kjwfx/!svn/ver/3/kjwfx/war/WEB-INF/appengine-generated/local_db.bin
+END

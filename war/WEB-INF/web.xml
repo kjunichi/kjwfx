@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://java.sun.com/xml/ns/javaee"
+xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+	<servlet>
+		<servlet-name>Kjwfx</servlet-name>
+		<servlet-class>com.cocolog_nifty.kjunichi.kjwfx.KjwfxServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>KjwfxSell</servlet-name>
+		<servlet-class>com.cocolog_nifty.kjunichi.kjwfx.KjwfxSellServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>FxCheck</servlet-name>
+		<servlet-class>com.cocolog_nifty.kjunichi.kjwfx.FxCheckServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>FxGraph</servlet-name>
+		<servlet-class>com.cocolog_nifty.kjunichi.kjwfx.FxGraphServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>FxUpdateRate</servlet-name>
+		<servlet-class>com.cocolog_nifty.kjunichi.kjwfx.FxUpdateRateRecordServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>FxJSON</servlet-name>
+		<servlet-class>com.cocolog_nifty.kjunichi.kjwfx.FxJsonServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>Kjwfx</servlet-name>
+		<url-pattern>/kjwfx</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>KjwfxSell</servlet-name>
+		<url-pattern>/kjwfxsell</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>FxCheck</servlet-name>
+		<url-pattern>/fxcheck</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>FxUpdateRate</servlet-name>
+		<url-pattern>/fxupdaterate</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>FxGraph</servlet-name>
+		<url-pattern>/fxgraph</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>FxJSON</servlet-name>
+		<url-pattern>/fxjson</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+    <display-name>Remote API Servlet</display-name>
+    <servlet-name>RemoteApiServlet</servlet-name>
+    <servlet-class>com.google.apphosting.utils.remoteapi.RemoteApiServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+</servlet>
+<servlet-mapping>
+    <servlet-name>RemoteApiServlet</servlet-name>
+    <url-pattern>/remote_api</url-pattern>
+</servlet-mapping>
+
+	<welcome-file-list>
+		<welcome-file>jsp/fxlist.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>
