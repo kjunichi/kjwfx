@@ -51,6 +51,7 @@ public class FxGraphServlet extends HttpServlet {
 		Float yEurTtb = null;
 
 		List<FxDayRate> dayRateList = FxCalc.getYesterdayRateList();
+		if(dayRateList!=null) {
 		for (FxDayRate rate : dayRateList) {
 			if (rate.getCurrency().equals("USD")) {
 				// USD
@@ -63,7 +64,7 @@ public class FxGraphServlet extends HttpServlet {
 				yEurTtb = rate.getMinTtb();
 			}
 		}
-
+		}
 		if (fxrates.isEmpty()) {
 			return;
 		} else {
