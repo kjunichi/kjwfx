@@ -1,9 +1,10 @@
-<!-- Indices written at Sat, 28 Jul 2012 17:02:16 JST -->
+<!-- Indices written at Sat, 8 Sep 2012 06:42:05 JST -->
 
 <datastore-indexes>
 
-    <!-- Used 1 time in query history -->
+    <!-- Used 4 times in query history -->
     <datastore-index kind="Fxrecord2" ancestor="false" source="auto">
+        <property name="currency" direction="asc"/>
         <property name="isCompleted" direction="asc"/>
         <property name="ttb" direction="asc"/>
     </datastore-index>
@@ -12,6 +13,12 @@
     <datastore-index kind="FxRate" ancestor="false" source="auto">
         <property name="currency" direction="asc"/>
         <property name="date" direction="desc"/>
+    </datastore-index>
+
+    <!-- Used 1 time in query history -->
+    <datastore-index kind="Fxrecord2" ancestor="false" source="auto">
+        <property name="isCompleted" direction="asc"/>
+        <property name="ttb" direction="asc"/>
     </datastore-index>
 
 </datastore-indexes>
