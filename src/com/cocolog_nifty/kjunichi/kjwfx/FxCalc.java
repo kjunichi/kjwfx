@@ -15,7 +15,7 @@ import com.cocolog_nifty.kjunichi.kjwfx.ds.Fxrecord2;
 import com.google.appengine.api.users.User;
 
 /**
- * ÅˆÀ’lAÅ‚’l“™ŒvZ‚·‚éƒNƒ‰ƒX
+ * æœ€å®‰å€¤ã€æœ€é«˜å€¤ç­‰è¨ˆç®—ã™ã‚‹ã‚¯ãƒ©ã‚¹
  * 
  * @author junichi
  * 
@@ -23,7 +23,7 @@ import com.google.appengine.api.users.User;
 public class FxCalc {
 
 	/**
-	 * w’è‚³‚ê‚½“ú•t‚ÌÅ‚’l‚ğ•Ô‚·
+	 * æŒ‡å®šã•ã‚ŒãŸæ—¥ä»˜ã®æœ€é«˜å€¤ã‚’è¿”ã™
 	 * 
 	 * @param date
 	 * @return
@@ -68,8 +68,8 @@ public class FxCalc {
 	}
 
 	/**
-	 * USD‚ÌTTS‚ÌÅ‚’l‚ğæ“¾
-	 * w’è‚³‚ê‚½“ú•t‚ÌUSD‚ÌTTS‚ÌÅ‚’l‚ğæ“¾‚·‚éB
+	 * USDã®TTSã®æœ€é«˜å€¤ã‚’å–å¾—
+	 * æŒ‡å®šã•ã‚ŒãŸæ—¥ä»˜ã®USDã®TTSã®æœ€é«˜å€¤ã‚’å–å¾—ã™ã‚‹ã€‚
 	 * 
 	 * @param date
 	 * @return
@@ -92,7 +92,7 @@ public class FxCalc {
 	}
 
 	/**
-	 * USD‚ÌTTS‚ÌÅˆÀ’l‚ğæ“¾
+	 * USDã®TTSã®æœ€å®‰å€¤ã‚’å–å¾—
 	 * 
 	 * @param date
 	 * @return
@@ -115,7 +115,7 @@ public class FxCalc {
 	}
 
 	/**
-	 * w’è‚³‚ê‚½“ú•t‚Ìw’è‚³‚ê‚½’Ê‰İiUSD/EURj‚ÌÅ‚’lAÅˆÀ’l‚ğ•Ô‚·B
+	 * æŒ‡å®šã•ã‚ŒãŸæ—¥ä»˜ã®æŒ‡å®šã•ã‚ŒãŸé€šè²¨ï¼ˆUSD/EURï¼‰ã®æœ€é«˜å€¤ã€æœ€å®‰å€¤ã‚’è¿”ã™ã€‚
 	 * 
 	 * @param date
 	 * @param currency
@@ -128,7 +128,7 @@ public class FxCalc {
 
 		List<FxRate> fxrecords = getFxrecords(sdf1.format(date), currency);
 
-		// Å‚’lAÅˆÀ’l‚ğ’²‚×‚éB
+		// æœ€é«˜å€¤ã€æœ€å®‰å€¤ã‚’èª¿ã¹ã‚‹ã€‚
 		MaxMinRate rate = new MaxMinRate();
 		rate.setMaxTts(-1);
 		rate.setMinTts(-1);
@@ -177,7 +177,7 @@ public class FxCalc {
 		return rate;
 	}
 	/**
-	 * w’è‚³‚ê‚½“ú•t‚Ìw’è‚³‚ê‚½’Ê‰İiUSD/EURj‚ÌÅ‚’lAÅˆÀ’l‚ğ•Ô‚·B
+	 * æŒ‡å®šã•ã‚ŒãŸæ—¥ä»˜ã®æŒ‡å®šã•ã‚ŒãŸé€šè²¨ï¼ˆUSD/EURï¼‰ã®æœ€é«˜å€¤ã€æœ€å®‰å€¤ã‚’è¿”ã™ã€‚
 	 * 
 	 * @param date
 	 * @param currency
@@ -192,7 +192,7 @@ public class FxCalc {
 		return fxdayrates;
 	}
 	/**
-	 * getFxDayRate “ú’PˆÊ‚ÌƒŒ[ƒg‚ğæ“¾‚·‚é
+	 * getFxDayRate æ—¥å˜ä½ã®ãƒ¬ãƒ¼ãƒˆã‚’å–å¾—ã™ã‚‹
 	 * @param date
 	 * @param currency
 	 * @return
@@ -226,7 +226,7 @@ public class FxCalc {
 				+ " date >= beginDate && date <= endDate "
 				+ " parameters String curr,java.util.Date beginDate,java.util.Date endDate  ";
 		// +" ORDER BY ttb";
-		// JST‚Æ‚µ‚Ä“ú•t‚ğİ’è‚·‚é
+		// JSTã¨ã—ã¦æ—¥ä»˜ã‚’è¨­å®šã™ã‚‹
 		TimeZone.setDefault(TimeZone.getTimeZone("JST"));
 		SimpleDateFormat sdf1 = new SimpleDateFormat("yyyyMMddHHmmss");
 		Date bDate = null;
@@ -249,7 +249,7 @@ public class FxCalc {
 	}
 
 	/**
-	 * getFxDone w’è‚³‚ê‚½ƒ†[ƒU‚ÌŠ®—¹‚µ‚½æˆø‹L˜^‚ğ•Ô‚·B
+	 * getFxDone æŒ‡å®šã•ã‚ŒãŸãƒ¦ãƒ¼ã‚¶ã®å®Œäº†ã—ãŸå–å¼•è¨˜éŒ²ã‚’è¿”ã™ã€‚
 	 * 
 	 * @param user
 	 * @param currency
@@ -271,7 +271,7 @@ public class FxCalc {
 
 	/**
 	 * getYesterdayRate
-	 * ğ“ú‚ÌƒŒ[ƒg‚ğæ“¾‚·‚éB
+	 * æ˜¨æ—¥ã®ãƒ¬ãƒ¼ãƒˆã‚’å–å¾—ã™ã‚‹ã€‚
 	 * @return
 	 */
 	@SuppressWarnings("unchecked")
@@ -294,11 +294,11 @@ public class FxCalc {
 		}
 		StringBuffer sb = new StringBuffer();
 		for (FxDayRate rate : list) {
-			sb.append(rate.getCurrency() + "‚ÌÅˆÀ’l(TTB)" + rate.getMinTtb()
-					+ ",Å‚’liTTSj‚Í" + rate.getMaxTts());
-			sb.append("B");
+			sb.append(rate.getCurrency() + "ã®æœ€å®‰å€¤(TTB)" + rate.getMinTtb()
+					+ ",æœ€é«˜å€¤ï¼ˆTTSï¼‰ã¯" + rate.getMaxTts());
+			sb.append("ã€‚");
 		}
-		return yesterdayStr + "Money Kit‚Ì" + sb.toString();
+		return yesterdayStr + "Money Kitã®" + sb.toString();
 	}
 
 	/**
@@ -311,7 +311,7 @@ public class FxCalc {
 		PersistenceManager pm = PMF.get().getPersistenceManager();
 		TimeZone.setDefault(TimeZone.getTimeZone("JST"));
 
-		// ğ“ú‚Ì“ú•t‚ğæ“¾‚·‚éB
+		// æ˜¨æ—¥ã®æ—¥ä»˜ã‚’å–å¾—ã™ã‚‹ã€‚
 		Calendar cal = Calendar.getInstance();
 		cal.add(Calendar.DATE, -1);
 		Date yesterday = cal.getTime();
