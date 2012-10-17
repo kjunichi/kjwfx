@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<datastore-indexes  autoGenerate="false">
+	<datastore-index kind="Fxrecord2" ancestor="false" source="manual">
+		<property name="currency" direction="asc" />
+		<property name="isCompleted" direction="asc" />
+		<property name="ttb" direction="asc" />
+	</datastore-index>
+</datastore-indexes>
