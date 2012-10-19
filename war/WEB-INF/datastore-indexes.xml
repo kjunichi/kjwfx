@@ -5,4 +5,8 @@
 		<property name="isCompleted" direction="asc" />
 		<property name="ttb" direction="asc" />
 	</datastore-index>
+	<datastore-index kind="FxDayRate" ancestor="false" source="manual">
+		<property name="currency" direction="asc"/>
+		<property name="date" direction="asc"/>
+	</datastore-index>
 </datastore-indexes>
