@@ -64,12 +64,12 @@ public class MoneyKit {
 				// 現在時刻と大きく違いが無いかをチェック
 
 				// USD
-				String usdRate = rates[19].split("='")[1];
+				String usdRate = rates[23].split("='")[1];
 				this.ttb[USD_INDEX]=usdRate.split(";")[2];
 				this.tts[USD_INDEX]=usdRate.split(";")[3];
 				
 				// EUR
-				String eurRate = rates[11].split("='")[1];
+				String eurRate = rates[13].split("='")[1];
 				// EUR ttb
 				this.ttb[EUR_INDEX] = eurRate.split(";")[2];
 				// EUR tts
