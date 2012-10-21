@@ -18,7 +18,7 @@ scope="request" />
   <table border="1">
   <tr><th>Day</th><th>Ttb</th><th>Tts</th></tr>
 <%
-// ð“ú‚Ì“ú•t
+// æ—¥ä»˜
 TimeZone.setDefault(TimeZone.getTimeZone("JST"));
 
 Calendar cal = Calendar.getInstance();
