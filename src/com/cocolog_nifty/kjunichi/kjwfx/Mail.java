@@ -16,7 +16,7 @@ public class Mail {
 
 	/**
 	 * sendSellAlert
-	 * ”„‚Á‚½•û‚ª—Ç‚¢ƒŒ[ƒg‚É‚È‚Á‚½ê‡‚ÌƒAƒ‰[ƒg‚ğ‘—M‚·‚éB
+	 * å£²ã£ãŸæ–¹ãŒè‰¯ã„ãƒ¬ãƒ¼ãƒˆã«ãªã£ãŸå ´åˆã®ã‚¢ãƒ©ãƒ¼ãƒˆã‚’é€ä¿¡ã™ã‚‹ã€‚
 	 * @param addr
 	 * @param ttb
 	 * @param tts
@@ -28,12 +28,12 @@ public class Mail {
 		
 		StringBuffer sb = new StringBuffer();
 		
-		// ƒ[ƒ‹‘—M
+		// ãƒ¡ãƒ¼ãƒ«é€ä¿¡
 		Properties props = new Properties();
-		// ‚±‚±‚©‚çƒ[ƒJƒ‹ƒfƒoƒbƒO—p
+		// ã“ã“ã‹ã‚‰ãƒ­ãƒ¼ã‚«ãƒ«ãƒ‡ãƒãƒƒã‚°ç”¨
 		props.put("mail.smtp.host", "smtp.nifty.com");
 
-		// ‚±‚±‚Ü‚Å
+		// ã“ã“ã¾ã§
 		Session session = Session.getDefaultInstance(props, null);
 		Message msg = new MimeMessage(session);
 		try {
@@ -52,7 +52,7 @@ public class Mail {
 		}
 		try {
 			msg.setSubject("Sell "+currency+"!");
-			msg.setText(currency+" ”„‚êI" + tts + "\n" + "”ƒ’l = " + ttb);
+			msg.setText(currency+" å£²ã‚Œï¼" + tts + "\n" + "è²·å€¤ = " + ttb);
 
 		} catch (MessagingException e) {
 			// TODO Auto-generated catch block
@@ -82,12 +82,12 @@ public class Mail {
 		Logger logger = Logger.getLogger("Mail");
 		logger.warning("sendBuyAlert "+ addr);
 		
-		// ƒ[ƒ‹‘—M
+		// ãƒ¡ãƒ¼ãƒ«é€ä¿¡
 		Properties props = new Properties();
-		// ‚±‚±‚©‚çƒ[ƒJƒ‹ƒfƒoƒbƒO—p
+		// ã“ã“ã‹ã‚‰ãƒ­ãƒ¼ã‚«ãƒ«ãƒ‡ãƒãƒƒã‚°ç”¨
 		props.put("mail.smtp.host", "smtp.nifty.com");
 
-		// ‚±‚±‚Ü‚Å
+		// ã“ã“ã¾ã§
 		Session session = Session.getDefaultInstance(props, null);
 		Message msg = new MimeMessage(session);
 		try {
@@ -105,7 +105,7 @@ public class Mail {
 		}
 		try {
 			msg.setSubject("Buy "+currency+"!");
-			msg.setText(currency +" ”ƒ‚¦I" + ttb + "\n" + "”ƒ’l = " + tts);
+			msg.setText(currency +" è²·ãˆï¼" + ttb + "\n" + "è²·å€¤ = " + tts);
 
 		} catch (MessagingException e) {
 			// TODO Auto-generated catch block
