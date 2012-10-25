@@ -41,20 +41,26 @@ public class FxJsonServlet extends HttpServlet {
 		resp.setContentType("application/json; charset=UTF-8");
 		resp.setHeader("Cache-Control", "private");
 
-		TimeZone.setDefault(TimeZone.getTimeZone("JST"));
+		if(startDate!=null && startDate.length()>1) {
+		}else {
 
-		Calendar cal = Calendar.getInstance();
+			TimeZone.setDefault(TimeZone.getTimeZone("JST"));
+
+			Calendar cal = Calendar.getInstance();
+			
+			cal.add(Calendar.DATE, -1);
+			Date day = cal.getTime();
+			cal.add(Calendar.DATE, -14);
+			Date eday = cal.getTime();
+			SimpleDateFormat sdf1 = new SimpleDateFormat("yyyyMMdd");
+			startDate = sdf1.format(eday);
+			endDate = sdf1.format(day);
+		}
+		List<FxDayRate> rate = FxCalc.getMaxMinRateByDay(startDate,
+				endDate, currency);
 		PrintWriter pwriter = resp.getWriter();
 		pwriter.println(req.getParameter("callback") + "({\"rate\":[");
 
-		cal.add(Calendar.DATE, -1);
-		Date day = cal.getTime();
-		cal.add(Calendar.DATE, -14);
-		Date eday = cal.getTime();
-		SimpleDateFormat sdf1 = new SimpleDateFormat("yyyyMMdd");
-
-		List<FxDayRate> rate = FxCalc.getMaxMinRateByDay(sdf1.format(eday),
-				sdf1.format(day), currency);
 		int n = 1;
 		for (FxDayRate g : rate) {
 			if (n != 1) {
