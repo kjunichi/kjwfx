@@ -60,19 +60,20 @@ public class FxCheckServlet extends HttpServlet {
 	/**
 	 * checkEurSell EURのレートが買い時の場合、アラートメールを送信する。
 	 * 
-	 * @param eurCurrnetTts
+	 * @param eurCurrentTts
 	 */
 	@SuppressWarnings("unchecked")
-	void checkEurSell(PersistenceManager pm, float eurCurrnetTts) {
+	void checkEurSell(PersistenceManager pm, float eurCurrentTts) {
 
 		String queryStr = "SELECT FROM " + Fxrecord2.class.getName()
 				+ " WHERE " + "isCompleted == isCompletedParam" + " && "
-				+ "currency == currencyParam " + " ORDER BY ttb asc ";
+				+ "currency == currencyParam "+" && " 
+				+"ttb < ttbParam"+ " ORDER BY ttb asc ";
 		Query query = pm.newQuery(queryStr);
-		query.declareParameters("Boolean isCompletedParam,String currencyParam");
+		query.declareParameters("Boolean isCompletedParam,String currencyParam, float ttbParam");
 
 		List<Fxrecord2> fxrecords = (List<Fxrecord2>) pm.newQuery(query)
-				.execute(false, "EUR");
+				.execute(false, "EUR",eurCurrentTts);
 		boolean isMail = false;
 
 		if (fxrecords.isEmpty()) {
@@ -93,7 +94,7 @@ public class FxCheckServlet extends HttpServlet {
 				// 購入時の日本円を求める。（単位は円）
 				float beforeEur = g.getAmount() * eurTtb;
 				// 今回売却した場合の金額を求める。(単位は円)
-				float afterEur = g.getAmount() * eurCurrnetTts;
+				float afterEur = g.getAmount() * eurCurrentTts;
 
 				if (afterEur > beforeEur) {
 					logger.warning("beforeEur = " + beforeEur);
@@ -107,7 +108,7 @@ public class FxCheckServlet extends HttpServlet {
 					// アラートメールを送信する。
 					Mail.sendSellAlert(g.getAuthor().getEmail(),
 							eurTtb.toString(),
-							(new Float(eurCurrnetTts)).toString(), "EUR");
+							(new Float(eurCurrentTts)).toString(), "EUR");
 				}
 			}
 		}
@@ -187,12 +188,12 @@ public class FxCheckServlet extends HttpServlet {
 
 		String queryStr = "SELECT FROM " + Fxrecord2.class.getName()
 				+ " WHERE " + "isCompleted == isCompletedParam" + " && "
-				+ "currency == currencyParam " + " ORDER BY ttb asc ";
+				+ "currency == currencyParam && ttb < ttbParam" + " ORDER BY ttb asc ";
 		Query query = pm.newQuery(queryStr);
-		query.declareParameters("Boolean isCompletedParam,String currencyParam");
+		query.declareParameters("Boolean isCompletedParam,String currencyParam,float ttbParam");
 
 		List<Fxrecord2> fxrecords = (List<Fxrecord2>) pm.newQuery(query)
-				.execute(false, "USD");
+				.execute(false, "USD", usdCurrnetTts);
 		boolean isMail = false;
 
 		if (fxrecords.isEmpty()) {
