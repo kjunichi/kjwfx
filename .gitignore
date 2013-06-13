@@ -10,3 +10,9 @@
 .classpath
 
 *.prefs
+
+*.class
+
+war/WEB-INF/appengine-generated/local_db.bin
+
+*.class
