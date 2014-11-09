@@ -1,15 +1,13 @@
 package com.cocolog_nifty.kjunichi.kjwfx.ds;
 
-import java.util.Date;
 import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.IdentityType;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
-import com.google.appengine.api.users.User;
 
 /**
- * “ú’PˆÊ‚Ìˆ×‘ÖƒŒ[ƒg‚ğ‹L˜^‚·‚é
+ * ï¿½ï¿½ï¿½Pï¿½Ê‚Ìˆ×‘Öƒï¿½ï¿½[ï¿½gï¿½ï¿½ï¿½Lï¿½^ï¿½ï¿½ï¿½ï¿½
  * @author junichi
  *
  */
@@ -70,10 +68,10 @@ public class FxDayRate {
 
 		this.setDate(date);
 		
-		// w“ü’Ê‰İí—Ş
+		// ï¿½wï¿½ï¿½ï¿½Ê‰İï¿½ï¿½
 		this.setCurrency(currency);
 
-		// æˆøƒŒ[ƒg
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½g
 		this.setMinTtb(minTtb);
 		this.setMaxTtb(maxTtb);
 

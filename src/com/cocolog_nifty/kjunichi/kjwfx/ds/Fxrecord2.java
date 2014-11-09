@@ -74,12 +74,12 @@ public class Fxrecord2 {
 		this.setAuthor(author);
 		this.setDate(date);
 
-		// w“ü’Ê‰İí—Ş
+		// è³¼å…¥é€šè²¨ç¨®é¡
 		this.setCurrency(currency);
 
-		// æˆøƒŒ[ƒg
+		// å–å¼•ãƒ¬ãƒ¼ãƒˆ
 		this.setTtb(ttb);
-		// æˆøŠz(w“ü‚µ‚½’Ê‰İ‚Å“ü—Í)
+		// å–å¼•é¡(è³¼å…¥ã—ãŸé€šè²¨ã§å…¥åŠ›)
 		this.setAmount(amount);
 		//
 		this.setCompleted(false);

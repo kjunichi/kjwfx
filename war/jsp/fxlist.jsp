@@ -11,6 +11,9 @@
 <jsp:useBean id="fxListBean" class="com.cocolog_nifty.kjunichi.kjwfx.bean.FxListBean"
 scope="request" />
 <html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+</head>
   <body>
   <a href="/jsp/fxgraph.jsp">グラフ</a>
 <jsp:getProperty name="fxListBean" property="rateInfo"/>

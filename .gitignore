@@ -1,18 +1,10 @@
-*.class
-
 # Package Files #
 *.jar
 *.war
 *.ear
-
-*.class
-
-.classpath
-
 *.prefs
-
-*.class
-
-war/WEB-INF/appengine-generated/local_db.bin
-
-*.class
+war/WEB-INF/appengine-generated/
+war/WEB-INF/classes/
+.settings/
+*~
+.classpath
