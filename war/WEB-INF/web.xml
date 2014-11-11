@@ -29,7 +29,81 @@
 		<servlet-class>com.cocolog_nifty.kjunichi.kjwfx.FxJsonServlet</servlet-class>
 	</servlet>
 	
-	<servlet-mapping>
+	<!-- JSPC servlet mappings start -->
+
+    <servlet>
+        <servlet-name>org.apache.jsp.jsp.copyfxRec_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.jsp.copyfxRec_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.jsp.fxDetail_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.jsp.fxDetail_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.jsp.fxgraph_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.jsp.fxgraph_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.jsp.fxlastweek_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.jsp.fxlastweek_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.jsp.fxlist_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.jsp.fxlist_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.jsp.fxperformance_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.jsp.fxperformance_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.jsp.fxtanuki_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.jsp.fxtanuki_jsp</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.jsp.copyfxRec_jsp</servlet-name>
+        <url-pattern>/jsp/copyfxRec.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.jsp.fxDetail_jsp</servlet-name>
+        <url-pattern>/jsp/fxDetail.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.jsp.fxgraph_jsp</servlet-name>
+        <url-pattern>/jsp/fxgraph.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.jsp.fxlastweek_jsp</servlet-name>
+        <url-pattern>/jsp/fxlastweek.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.jsp.fxlist_jsp</servlet-name>
+        <url-pattern>/jsp/fxlist.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.jsp.fxperformance_jsp</servlet-name>
+        <url-pattern>/jsp/fxperformance.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.jsp.fxtanuki_jsp</servlet-name>
+        <url-pattern>/jsp/fxtanuki.jsp</url-pattern>
+    </servlet-mapping>
+
+<!-- JSPC servlet mappings end -->
+
+<servlet-mapping>
 		<servlet-name>Kjwfx</servlet-name>
 		<url-pattern>/kjwfx</url-pattern>
 	</servlet-mapping>
@@ -62,7 +136,7 @@
 </servlet>
 <servlet-mapping>
     <servlet-name>RemoteApiServlet</servlet-name>
-    <url-pattern>/remote_api</url-pattern>
+    <url-pattern>/_ah/remote_api</url-pattern>
 </servlet-mapping>
 
 	<welcome-file-list>
