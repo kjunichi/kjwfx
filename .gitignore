@@ -8,3 +8,7 @@ war/WEB-INF/classes/
 .settings/
 *~
 .classpath
+src/*.class
+src/com/cocolog_nifty/kjunichi/kjwfx/*.class
+src/com/cocolog_nifty/kjunichi/kjwfx/bean/*.class
+src/com/cocolog_nifty/kjunichi/kjwfx/ds/*.class

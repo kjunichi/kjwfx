@@ -9,7 +9,7 @@ import javax.jdo.annotations.PrimaryKey;
 import com.google.appengine.api.users.User;
 
 /**
- * ˆ×‘ÖƒŒ[ƒg‚ğ‹L˜^‚·‚é
+ * ç‚ºæ›¿ãƒ¬ãƒ¼ãƒˆã‚’è¨˜éŒ²ã™ã‚‹
  * @author junichi
  *
  */
@@ -57,10 +57,10 @@ public class FxRate {
 
 		this.setDate(date);
 
-		// w“ü’Ê‰İí—Ş
+		// è³¼å…¥é€šè²¨ç¨®é¡
 		this.setCurrency(currency);
 
-		// æˆøƒŒ[ƒg
+		// å–å¼•ãƒ¬ãƒ¼ãƒˆ
 		this.setTtb(ttb);
 
 		this.setTts(tts);

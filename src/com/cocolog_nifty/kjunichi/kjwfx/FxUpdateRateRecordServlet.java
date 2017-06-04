@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.cocolog_nifty.kjunichi.kjwfx.ds.FxDayRate;
 
 /**
- * FxUpdateRateRecordServlet “®‚©‚µ‚½‘O“ú‚ÌÅˆÀ’lAÅ‚’l‚ğ‹L˜^‚·‚éB
+ * FxUpdateRateRecordServlet å‹•ã‹ã—ãŸå‰æ—¥ã®æœ€å®‰å€¤ã€æœ€é«˜å€¤ã‚’è¨˜éŒ²ã™ã‚‹ã€‚
  * 
  * @author junichi
  * 
@@ -31,19 +31,19 @@ public class FxUpdateRateRecordServlet extends HttpServlet {
 			throws ServletException, IOException {
 		Logger logger = Logger.getLogger("FxUpdateRateRecordServlet");
 
-		// ‘O“ú‚Ì“ú•t‚ğZo‚·‚éB
+		// å‰æ—¥ã®æ—¥ä»˜ã‚’ç®—å‡ºã™ã‚‹ã€‚
 		TimeZone.setDefault(TimeZone.getTimeZone("JST"));
 
 		Calendar cal = Calendar.getInstance();
 		cal.add(Calendar.DATE, -1);
 		Date yesterday = cal.getTime();
 
-		// ‘O“ú‚ÌƒŒ[ƒg‚ğæ“¾‚·‚éB
+		// å‰æ—¥ã®ãƒ¬ãƒ¼ãƒˆã‚’å–å¾—ã™ã‚‹ã€‚
 		MaxMinRate rateUsd;
 		rateUsd = FxCalc.getMaxMinRate(yesterday, "USD");
 		MaxMinRate rateEur;
 		rateEur = FxCalc.getMaxMinRate(yesterday, "EUR");
-		// æ“¾‚µ‚½Å‚’lAÅˆÀ’l‚ğ‹L˜^‚·‚éB
+		// å–å¾—ã—ãŸæœ€é«˜å€¤ã€æœ€å®‰å€¤ã‚’è¨˜éŒ²ã™ã‚‹ã€‚
 		TimeZone.setDefault(TimeZone.getTimeZone("JST"));
 		SimpleDateFormat sdf1 = new SimpleDateFormat("yyyyMMdd");
 
